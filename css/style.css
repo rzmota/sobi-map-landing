@@ -1,0 +1,406 @@
+/* ================================================
+   Normalize
+==================================================== */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+/* ================================================
+   Base
+==================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
+}
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.231;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+/* ================================================
+   Links
+==================================================== */
+a {
+  text-decoration: underline;
+}
+a:active {
+  outline: 0;
+}
+a:hover {
+  color: ;
+  outline: 0;
+}
+a:focus {
+  color: ;
+}
+a:visited {
+  color: ;
+}
+/* ================================================
+   Typography
+==================================================== */
+body {
+  font: 1em/1.1 Helvetica, Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+p {
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+/* Redeclare monospace font family: h5bp.com/j */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+/* Improve readability of pre-formatted text in all browsers */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+small {
+  font-size: 85%;
+}
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+hgroup,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+}
+/* ================================================
+   Lists
+==================================================== */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+dd {
+  margin: 0;
+}
+/* ================================================
+	Content
+==================================================== */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  max-width: 100%;
+}
+/* ================================================
+	Forms
+==================================================== */
+form {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+table button,
+table input {
+  *overflow: auto;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+input:invalid,
+textarea:invalid {
+  background-color: #f0dddd;
+}
+/* ================================================
+	Forms
+==================================================== */
+.ammapAlert {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 12px;
+  color: blue;
+}
+.ammapDescriptionWindow {
+  font-size: 11px;
+  font-family: verdana, helvetica, arial, sans-serif;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #DADADA;
+  border-width: 1px;
+  color: #000000;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ammapDescriptionTitle {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: verdana, helvetica, arial, sans-serif;
+  padding-bottom: 5px;
+}
+.ammapObjectList ul {
+  padding-left: 20px;
+  list-style: square outside;
+  color: #999999;
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 12px;
+}
+.ammapObjectList ul ul {
+  padding-left: 14px;
+}
+.ammapObjectList a {
+  color: #000000;
+}
+.ammapObjectList a {
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  padding: 2px;
+}
+.ammapObjectList a:hover {
+  color: #CC0000;
+  text-decoration: none;
+  background: #FFFFFF;
+  cursor: pointer;
+  display: block;
+}
+.ammapDescriptionText {
+  overflow: auto;
+}
+.amcharts-map-image-label tspan {
+  font-family: Arial;
+  font-size: 30px!important;
+}
+ul.years-list {
+  margin: 20px 0 0 30px;
+}
+ul.years-list li {
+  display: inline-block;
+  padding: 0px 4px;
+}
+ul.years-list li a {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 10px 5px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  cursor: pointer;
+  position: relative;
+}
+ul.years-list li a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #0a3d99;
+  -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+}
+ul.years-list li a:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: absolute;
+  top: 9px;
+  left: 6px;
+}
+ul.years-list li .one:before {
+  background-color: #F34235;
+}
+ul.years-list li .two:before {
+  background-color: #19a2ed;
+}
+ul.years-list li .three:before {
+  background-color: #4BAE4F;
+}
+ul.years-list li .four:before {
+  background-color: #9B26AF;
+}
+ul.years-list li .five:before {
+  background-color: #055079;
+}
+ul.years-list li .six:before {
+  background-color: #003c5c;
+}
+#mapdiv {
+  width: 100%;
+  height: 800px;
+}

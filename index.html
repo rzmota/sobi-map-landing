@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>SoBi Networks Map</title>
+
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script src="js/ammap.js" type="text/javascript"></script>
+        <!-- map file should be included after ammap.js -->
+		<script src="maps/js/worldLow.js" type="text/javascript"></script>
+
+        <!-- scripts for exporting chart as an image -->
+		<!-- Note, the exporting will work only if you view the file from web server -->
+		<!-- Exporting to image works on all modern browsers except IE9 (IE10 works fine) -->
+		<!--[if (!IE) | (gte IE 10)]> -->
+        <link  type="text/css" href="plugins/export/export.css" rel="stylesheet">
+        <script type="text/javascript" src="plugins/export/export.js"></script>
+
+        <!-- <![endif]-->
+		<script>
+
+			// svg path for target icon
+	  var targetSVG = "M10.2,4.7c-2.8,0-5,2.3-5,5s2.3,5,5,5s5-2.3,5-5S12.9,4.7,10.2,4.7z";
+      // var lastYear = "2013";
+      var cities = {
+          "2013": [
+            {
+              svgPath: targetSVG,
+              title: "Buffalo Bike Share aaa",
+              latitude: 42.886447,
+              longitude: -78.878369,
+              color: "#F34235",
+            }, {
+              svgPath: targetSVG,
+              title: "SFO Airport",
+              latitude: 37.621313,
+              longitude: -122.378955,
+			  color: "#F34235"
+              
+            }, {
+              svgPath: targetSVG,
+              title: "Mountain Rides",
+              latitude: 43.519629,
+              longitude: -114.315324,
+              color: "#F34235"
+            }
+          ],
+          "2014": [
+            {
+              svgPath: targetSVG,
+              title: "Bishop Ranch",
+              latitude: 37.779927,
+              longitude: -121.978015,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "Coast Bike Share",
+              latitude: 27.950575,
+              longitude: -82.457178,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "Boise Green Bike",
+              latitude: 43.61871,
+              longitude: -116.214607,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "Cadence Bike Share",
+              latitude: 36.039525,
+              longitude: -114.981721,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "Grid Bike Share",
+              latitude: 33.448377,
+              longitude: -112.074037,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "Monash Bike Share",
+              latitude: -37.813628,
+              longitude: 144.963058,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "SoBi Hamilton",
+              latitude: 43.250021,
+              longitude: -79.866091,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "SoBi Kraków",
+              latitude: 50.06465,
+              longitude: 19.94498,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "Topeka Metro Bikes",
+              latitude: 39.055824,
+              longitude: -95.689018,
+              color: "#2095F2"
+            }, {
+              svgPath: targetSVG,
+              title: "VeloGo",
+              latitude: 45.42153,
+              longitude: -75.697193,
+              color: "#2095F2"
+            }
+          ],
+          "2015": [
+	        {
+              svgPath: targetSVG,
+              title: "Breeze Bike Share",
+              latitude: 34.019454,
+              longitude: -118.491191,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "Curtin University",
+              latitude: -31.950527,
+              longitude: 115.860457,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "Instabike",
+              latitude: 24.555059,
+              longitude: -81.779987,
+              color: "#E23D52"
+            }, {
+              svgPath: targetSVG,
+              title: "Jackson Hole",
+              latitude: 28.30367,
+              longitude: -81.373867,
+              color: "#E23D52"
+            }, {
+              svgPath: targetSVG,
+              title: "Menlo Business Park",
+              latitude: 37.441883,
+              longitude: -122.143019,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "USF Share-A-Bull Bikes",
+              latitude: 28.054627,
+              longitude: -82.42733,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "University of Virginia UBike",
+              latitude: 37.431573,
+              longitude: -78.656894,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "American Express NYC",
+              latitude: 40.712784,
+              longitude: -74.005941,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "SoBi Long Beach",
+              latitude: 40.588437,
+              longitude: -73.657908,
+              color: "#4BAE4F"
+            }, {
+              svgPath: targetSVG,
+              title: "Juice Bike Share",
+              latitude: 28.538335,
+              longitude: -81.379236,
+              color: "#4BAE4F"
+            }
+            
+          ],
+          "2016": [
+	        { 
+              svgPath: targetSVG,
+              title: "Bay Bike Share",
+              latitude: 37.562992,
+              longitude: -122.325525,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Beverly Hills",
+              latitude: 34.07362,
+              longitude: -118.400356,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "BIKETOWN PDX",
+              latitude: 45.523062,
+              longitude: -122.676482,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Long Beach California",
+              latitude: 33.77005,
+              longitude: -118.193739,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Reddy Bikeshare",
+              latitude: 42.886447,
+              longitude: -78.878369,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Relay Bike Share",
+              latitude: 33.748995,
+              longitude: -84.387982,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Velonet",
+              latitude: 50.075538,
+              longitude: 14.4378,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Cleveland ",
+              latitude: 41.49932,
+              longitude: -81.694361,
+              color: "#9B26AF"
+            }, {
+              svgPath: targetSVG,
+              title: "Wawelo",
+              latitude: 50.06465,
+              longitude: 19.94498,
+              color: "#9B26AF"
+            }
+            
+          ],
+          "2017": [
+	          { 
+              svgPath: targetSVG,
+              title: "Eugene Bike Share",
+              latitude: 44.052069,
+              longitude: -123.086754,
+              color: "#FEC006"
+            }, {
+              svgPath: targetSVG,
+              title: "New Orleans Bike Share",
+              latitude: 29.809477,
+              longitude: -90.084801,
+              color: "#FEC006"
+            }, {
+              svgPath: targetSVG,
+              title: "Connect Bikes",
+              latitude: 38.581572,
+              longitude: -121.4944,
+              color: "#FEC006"
+            }, {
+              svgPath: targetSVG,
+              title: "Providence Bike Share",
+              latitude: 41.823989,
+              longitude: -71.412834,
+              color: "#FEC006"
+            }
+	          
+          ]
+        };
+
+        // 2.74, -21.1341, 49.1712
+        // 2.64, -20.1341, 50.1712
+
+     var zooms = {
+        "2013": {
+          'level': 1.14,
+					'lng': 20.1341,
+					'lat': 30.1712
+        },
+        "2014": {
+          'level': 1.14,
+					'lng': 20.1341,
+					'lat': 30.1712
+        },
+        "2015": {
+          'level': 1.14,
+					'lng': 20.1341,
+					'lat': 30.1712
+        },
+        "2016": {
+          'level': 1.14,
+					'lng': 20.1341,
+					'lat': 30.1712
+        },
+        "2017": {
+          'level': 1.14,
+					'lng': 20.1341,
+					'lat': 30.1712
+        }
+      }
+
+		var map = AmCharts.makeChart("mapdiv", {
+			type: "map",
+
+		dataProvider: {
+          map: "worldLow",
+          images: provideDataForYear(2017)
+          // areas: [
+          //   { "id": "US" },
+          //   { "id": "CA" },
+          //   { "id": "AU" },
+          //   { "id": "PL" },
+          //   { "id": "CZ" }
+          // ]
+        },
+
+		areasSettings: {
+			unlistedAreasColor: "#e4e4e4",
+			selectedColor: "#CC0000",
+			autoZoom: true,
+			outlineThickness: 1.1,
+			
+			
+		},
+
+		imagesSettings: {
+			color: "#174abb",
+			selectedColor: "#000000",
+			selectedScale: 1,
+			rollOverScale: 1.5
+		},
+
+	
+        backgroundZoomsToTop: false,
+
+        "export": {
+			"enabled": true
+        }
+
+			});
+
+      function provideDataForYear(year) {
+        var firstYear = parseInt(Object.keys(cities)[0]);
+        var currentYear = parseInt(firstYear);
+        var itemsToConcat = year - firstYear;
+        var citiesForYear = []
+
+        while (currentYear <= year) {
+          citiesForYear = citiesForYear.concat(cities[currentYear])
+          currentYear++;
+        }
+
+        return citiesForYear;
+      }
+
+      function setNewData(year) {
+        map.dataProvider.images = provideDataForYear(year);
+
+        var zoom = zooms[year];
+        var zoomLevel = zoom['level'],
+        zoomLongitude = zoom['lng'],
+        zoomLatitude = zoom['lat'];
+
+        var lastZoom = zooms[year];
+        var lastZoomLevel = lastZoom['level'],
+        lastZoomLongitude = lastZoom['lng'],
+        lastZoomLatitude = lastZoom['lat'];
+
+        // set same zoom levels to retain map position/zoom
+        // map.dataProvider.zoomLevel = zoomLevel;
+        // map.dataProvider.zoomLongitude = zoomLongitude;
+        // map.dataProvider.zoomLatitude = zoomLatitude;
+
+        // map.dataProvider.zoomLevel = map.zoomLevel();
+        // map.dataProvider.zoomLatitude = map.zoomLatitude();
+        // map.dataProvider.zoomLongitude = map.zoomLongitude();
+
+        // map.dataProvider.zoomLevel = 14;
+        // map.dataProvider.zoomLatitude = 50;
+        // map.dataProvider.zoomLongitude = 40;
+
+        // map.zoomToLongLat(zoomLevel, zoomLongitude, zoomLatitude) // remove last 'true' to animate zoom
+
+        // map.dataProvider.zoomLevel = lastZoomLevel;
+        // map.dataProvider.zoomLongitude = lastZoomLongitude;
+        // map.dataProvider.zoomLatitude = lastZoomLatitude;
+
+        map.dataProvider.zoomLevel = zoomLevel;
+        map.dataProvider.zoomLongitude = zoomLongitude;
+        map.dataProvider.zoomLatitude = zoomLatitude;
+        map.validateNow();
+
+        map.zoomToLongLat(zoomLevel, zoomLongitude, zoomLatitude, true) // remove last 'true' to animate zoom
+        // lastYear = year;
+      }
+      </script>
+    </head>
+
+    <body>
+	    
+		<div id="mapdiv" style=""></div>
+		
+		<ul class="years-list">
+			<li><span>Select a year:</span>
+		    <li><a onclick="setNewData(2013)" class="year one">2013</a></li>
+		    <li><a onclick="setNewData(2014)" class="year two">2014</a></li>
+		    <li><a onclick="setNewData(2015)" class="year three">2015</a></li>
+		    <li><a onclick="setNewData(2016)" class="year four">2016</a></li>
+		    <li><a onclick="setNewData(2017)" class="year five">2017</a></li>
+	    </ul>
+      
+      
+      
+      
+    </body>
+</html>
